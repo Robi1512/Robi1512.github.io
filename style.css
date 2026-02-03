@@ -125,8 +125,11 @@ ul { list-style: none; }
 }
 
 .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+/* Wenn nur eine Karte da ist (Daten), diese zentrieren */
+.about-grid.single-card { display: flex; justify-content: center; }
+.about-grid.single-card .info-card { width: 100%; max-width: 500px; }
+
 .details-list li { margin-bottom: 12px; color: var(--text-main); }
-.details-list a:hover { color: var(--primary); text-decoration: underline; }
 
 .timeline { position: relative; max-width: 800px; margin: 0 auto; }
 .timeline::before {
@@ -172,18 +175,12 @@ ul { list-style: none; }
     outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
 }
 
-/* Footer */
+/* Footer (Bereinigt) */
 .footer-section {
     background: var(--bg-body); border-top: 1px solid var(--border);
     padding: 60px 20px; display: flex; justify-content: center; align-items: center; text-align: center;
 }
 .footer-container { display: flex; flex-direction: column; align-items: center; gap: 20px; }
-.footer-contact-info { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-.footer-link {
-    color: var(--text-main); border: 1px solid var(--border); padding: 10px 20px;
-    border-radius: 30px; background: var(--bg-card);
-}
-.footer-link:hover { border-color: var(--primary); color: var(--primary); }
 .footer-divider { width: 50px; height: 2px; background: var(--border); margin: 10px 0; }
 .copyright { font-size: 0.85rem; }
 

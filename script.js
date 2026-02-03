@@ -1,45 +1,73 @@
-// 1. Dark Mode Logik
-const themeBtn = document.getElementById('theme-toggle');
-themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    if (document.body.classList.contains('dark-mode')) {
-        themeBtn.innerText = '☀️ Licht an';
-    } else {
-        themeBtn.innerText = '🌙 Modus wechseln';
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const currentYear = new Date().getFullYear();
+    document.getElementById('year').textContent = currentYear;
+
+    // Daten abrufen (Simulierter Backend Call)
+    fetchData();
 });
 
-// 2. Konfetti Logik
-document.getElementById('confetti-btn').addEventListener('click', () => {
-    confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
-    });
-});
-
-// 3. Witz Generator (Fetch API)
-async function getJoke() {
-    const jokeText = document.getElementById('joke-text');
-    jokeText.innerText = "Lade Witz...";
+async function fetchData() {
     try {
-        const response = await fetch('https://official-joke-api.appspot.com/random_joke');
+        const response = await fetch('data.json');
+        if (!response.ok) throw new Error('Netzwerk-Antwort war nicht ok');
+        
         const data = await response.json();
-        jokeText.innerText = `${data.setup} - ${data.punchline}`;
+        renderPortfolio(data);
     } catch (error) {
-        jokeText.innerText = "Ups, der Witz-Server schläft gerade!";
+        console.error('Fehler beim Laden der Daten:', error);
+        document.getElementById('hero').innerHTML = '<p style="color:red">Fehler beim Laden der Profildaten.</p>';
     }
 }
 
-// 4. Klick Spiel
-let count = 0;
-const countDisplay = document.getElementById('click-count');
-document.getElementById('clicker-btn').addEventListener('click', () => {
-    count++;
-    countDisplay.innerText = count;
-    
-    // Kleiner Bonus bei jedem 10. Klick
-    if (count % 10 === 0) {
-        confetti({ particleCount: 30, spread: 50 });
-    }
-});
+function renderPortfolio(data) {
+    // 1. Hero Section rendern
+    const heroSection = document.getElementById('hero');
+    heroSection.innerHTML = `
+        <h1>Hallo, ich bin <span style="color: var(--accent-color)">${data.profile.name}</span></h1>
+        <p class="subtitle">${data.profile.title}</p>
+        <p>${data.profile.bio}</p>
+        <div style="margin-top: 20px;">
+            <a href="mailto:${data.profile.email}" class="tag" style="text-decoration:none; margin-right:10px;">
+                <i class="fas fa-envelope"></i> Kontaktieren
+            </a>
+            <a href="https://${data.profile.github}" target="_blank" class="tag" style="text-decoration:none;">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+    `;
+
+    // 2. Skills rendern
+    const skillsContainer = document.getElementById('skills-container');
+    data.skills.forEach(skill => {
+        const span = document.createElement('span');
+        span.className = 'tag';
+        span.textContent = skill;
+        skillsContainer.appendChild(span);
+    });
+
+    // 3. Experience rendern
+    const timelineContainer = document.getElementById('timeline-container');
+    data.experience.forEach(job => {
+        const div = document.createElement('div');
+        div.className = 'job-item';
+        div.innerHTML = `
+            <h3>${job.role} @ ${job.company}</h3>
+            <span class="job-date">${job.period}</span>
+            <p>${job.description}</p>
+        `;
+        timelineContainer.appendChild(div);
+    });
+
+    // 4. Projekte rendern
+    const projectsGrid = document.getElementById('projects-grid');
+    data.projects.forEach(project => {
+        const div = document.createElement('div');
+        div.className = 'project-card';
+        div.innerHTML = `
+            <h3>${project.title}</h3>
+            <p style="font-size: 0.9rem; color: #94a3b8; margin: 5px 0;">Stack: ${project.tech}</p>
+            <a href="${project.link}" class="project-link">Ansehen &rarr;</a>
+        `;
+        projectsGrid.appendChild(div);
+    });
+}

@@ -190,3 +190,11 @@ ul { list-style: none; }
     .timeline::before { left: 0; }
     .hero-visual { display: none; }
 }
+
+/* Styling für die Labels über den Inputs */
+.input-group label {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 8px;
+    display: block;
+}

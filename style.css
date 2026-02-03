@@ -1,12 +1,12 @@
 /* --- CSS VARIABLES & THEMES --- */
 :root {
-    /* Light Mode (Standard - Natürlich & Hell) */
-    --bg-body: #f8fafc;        /* Sehr helles Grau/Weiß */
-    --bg-card: #ffffff;        /* Reines Weiß */
-    --bg-alt: #f1f5f9;         /* Abgesetzte Sektionen */
-    --text-main: #334155;      /* Dunkles Grau (statt hartem Schwarz) */
-    --text-muted: #64748b;     /* Weicheres Grau */
-    --primary: #0d9488;        /* Deep Teal (Natürlich, modern, nicht neon) */
+    /* Light Mode */
+    --bg-body: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-alt: #f1f5f9;
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --primary: #0d9488;
     --primary-hover: #115e59;
     --border: #e2e8f0;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
@@ -14,33 +14,32 @@
 }
 
 [data-theme="dark"] {
-    /* Dark Mode (Modern & Angenehm) */
-    --bg-body: #0f172a;        /* Dunkles Slate-Blau (kein reines Schwarz) */
-    --bg-card: #1e293b;        /* Etwas heller */
+    /* Dark Mode */
+    --bg-body: #0f172a;
+    --bg-card: #1e293b;
     --bg-alt: #172033;
-    --text-main: #f1f5f9;      /* Off-White */
+    --text-main: #f1f5f9;
     --text-muted: #94a3b8;
-    --primary: #2dd4bf;        /* Etwas helleres Teal für Kontrast */
+    --primary: #2dd4bf;
     --primary-hover: #14b8a6;
     --border: #334155;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
     --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
 }
 
-/* --- GLOBAL RESET --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 body {
     background-color: var(--bg-body);
     color: var(--text-main);
-    font-family: 'Inter', sans-serif; /* Clean Sans-Serif */
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s; /* Sanfter Wechsel */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 h1, h2, h3, h4 { color: var(--text-main); font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
-p { color: var(--text-muted); margin-bottom: 1rem; }
+p, li { color: var(--text-muted); margin-bottom: 0.5rem; }
 a { text-decoration: none; color: inherit; transition: 0.2s; }
 ul { list-style: none; }
 
@@ -50,12 +49,23 @@ ul { list-style: none; }
 .hidden { opacity: 0; transform: translateY(20px); transition: 0.8s ease; }
 .show { opacity: 1; transform: translateY(0); }
 
+/* --- BUTTONS --- */
+.to-top {
+    position: fixed; bottom: 30px; right: 30px;
+    background: var(--primary); color: #fff;
+    width: 45px; height: 45px; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 1.2rem; box-shadow: var(--shadow-hover);
+    opacity: 0; pointer-events: none; transition: 0.4s; z-index: 999;
+}
+.to-top.active { opacity: 1; pointer-events: auto; }
+.to-top:hover { background: var(--primary-hover); transform: translateY(-3px); }
+
 /* --- NAVIGATION --- */
 .navbar {
     display: flex; justify-content: space-between; align-items: center;
     padding: 20px 5%; position: fixed; width: 100%; top: 0; z-index: 1000;
-    background: var(--bg-body); /* Passt sich dem Theme an */
-    border-bottom: 1px solid var(--border);
+    background: var(--bg-body); border-bottom: 1px solid var(--border);
 }
 .logo { font-size: 1.25rem; font-weight: 700; color: var(--primary); font-family: 'Lora', serif; }
 .nav-right { display: flex; align-items: center; gap: 20px; }
@@ -63,7 +73,6 @@ ul { list-style: none; }
 .nav-links a { font-size: 0.95rem; font-weight: 500; }
 .nav-links a:hover { color: var(--primary); }
 
-/* Theme Toggle Button */
 #theme-toggle {
     background: none; border: 1px solid var(--border); color: var(--text-main);
     padding: 8px 12px; border-radius: 50%; cursor: pointer; transition: 0.3s;
@@ -83,13 +92,12 @@ ul { list-style: none; }
 
 .btn-primary {
     background-color: var(--primary); color: #fff; padding: 12px 28px;
-    border-radius: 6px; font-weight: 600; display: inline-block;
+    border-radius: 6px; font-weight: 600; display: inline-block; border: none; cursor: pointer;
 }
 .btn-primary:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
 .btn-text { margin-left: 20px; font-weight: 600; color: var(--text-main); }
 .btn-text:hover { color: var(--primary); }
 
-/* Hero Visual (Kartenstapel statt Neon) */
 .image-stack { position: relative; width: 300px; height: 300px; }
 .stack-card {
     position: absolute; width: 200px; height: 260px;
@@ -104,25 +112,22 @@ ul { list-style: none; }
 .card-3 { transform: rotate(15deg) translate(50px, 20px); z-index: 3; opacity: 0.8; }
 .hero:hover .card-1 { transform: rotate(-15deg) translate(-40px, 20px); }
 
-/* --- SECTIONS --- */
+/* --- CONTENT SECTIONS --- */
 .section-title { font-size: 2rem; margin-bottom: 50px; text-align: center; }
 
-/* Cards Styling */
 .info-card, .timeline-content, .edu-item {
     background: var(--bg-card); padding: 30px; border-radius: 12px;
     border: 1px solid var(--border); box-shadow: var(--shadow);
     transition: 0.3s;
 }
-.info-card:hover, .timeline-content:hover {
+.info-card:hover, .timeline-content:hover, .edu-item:hover {
     transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--primary);
 }
 
-/* About Grid */
 .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .details-list li { margin-bottom: 12px; color: var(--text-main); }
 .details-list a:hover { color: var(--primary); text-decoration: underline; }
 
-/* Timeline */
 .timeline { position: relative; max-width: 800px; margin: 0 auto; }
 .timeline::before {
     content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 2px; background: var(--border);
@@ -133,14 +138,7 @@ ul { list-style: none; }
     background: var(--primary); border-radius: 50%;
 }
 .date { font-size: 0.85rem; color: var(--primary); font-weight: 600; margin-bottom: 5px; display: block; }
-.job-list { margin: 15px 0; padding-left: 18px; list-style: disc; color: var(--text-muted); }
-.tags { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
-.tags span, .tag {
-    background: var(--bg-alt); color: var(--text-main); padding: 5px 12px;
-    border-radius: 20px; font-size: 0.85rem; border: 1px solid var(--border);
-}
 
-/* Skills */
 .skills-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; margin-bottom: 40px; }
 .skill-bar-container { margin-bottom: 20px; }
 .skill-label { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 500; }
@@ -148,15 +146,31 @@ ul { list-style: none; }
 .fill { height: 100%; background-color: var(--primary); border-radius: 4px; }
 
 .tech-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag, .tags span {
+    background: var(--bg-alt); color: var(--text-main); padding: 5px 12px;
+    border-radius: 20px; font-size: 0.85rem; border: 1px solid var(--border);
+}
 
 .languages-row { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; text-align: center; }
 .lang-box { background: var(--bg-card); padding: 15px 25px; border-radius: 8px; border: 1px solid var(--border); }
 .lang { display: block; font-weight: 700; color: var(--text-main); }
 .level { font-size: 0.85rem; color: var(--text-muted); }
 
-/* Education */
 .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 .year { color: var(--primary); font-size: 0.85rem; font-weight: 600; }
+
+/* --- FORMULAR STYLES --- */
+.form-wrapper { max-width: 600px; margin: 0 auto; }
+.contact-form { display: flex; flex-direction: column; gap: 20px; }
+.input-group input, .input-group textarea {
+    width: 100%; padding: 15px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--bg-card); color: var(--text-main); font-family: inherit; font-size: 1rem;
+    transition: 0.3s;
+}
+.input-group textarea { height: 150px; resize: vertical; }
+.input-group input:focus, .input-group textarea:focus {
+    outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+}
 
 /* Footer */
 .footer-section {
@@ -173,7 +187,6 @@ ul { list-style: none; }
 .footer-divider { width: 50px; height: 2px; background: var(--border); margin: 10px 0; }
 .copyright { font-size: 0.85rem; }
 
-/* Mobile */
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .hero { flex-direction: column; text-align: center; padding-top: 120px; }

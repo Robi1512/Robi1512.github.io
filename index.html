@@ -1,135 +1,112 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robert Schmidt | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">R. Schmidt</div>
-        <ul class="nav-links">
-            <li><a href="#home">Start</a></li>
-            <li><a href="#about">Profil</a></li>
-            <li><a href="#experience">Erfahrung</a></li>
-            <li><a href="#skills">Kompetenzen</a></li>
-            <li><a href="#education">Bildung</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
+        <div class="logo">Robert Schmidt.</div>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#home">Start</a></li>
+                <li><a href="#about">Profil</a></li>
+                <li><a href="#experience">Erfahrung</a></li>
+                <li><a href="#skills">Kompetenzen</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Farbmodus wechseln">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
         </div>
     </nav>
 
     <section id="home" class="hero">
         <div class="hero-content hidden">
-            <p class="greeting">Hallo, ich bin</p>
+            <span class="greeting">Hallo, ich bin</span>
             <h1>Robert Schmidt</h1>
-            <h2 class="typing-text">Ich bin <span class="txt-type" data-wait="2000" data-words='["Bildbearbeiter", "Prozessoptimierer", "Python Entwickler", "Creative Mind"]'></span></h2>
-            <p class="hero-desc">Spezialist für High-End Bildbearbeitung und Workflow-Automatisierung.</p>
+            <h2 class="typing-text">Ich bin <span class="txt-type" data-wait="2000" data-words='["Bildbearbeiter", "Prozessoptimierer", "Python Entwickler"]'></span></h2>
+            <p class="hero-desc">Erfahrener Bildbearbeiter mit fundierten Kenntnissen in Adobe Photoshop und Lightroom zur Optimierung visueller Inhalte.</p>
             <div class="hero-btns">
-                <a href="#contact" class="btn-primary">Kontaktieren</a>
-                <a href="#experience" class="btn-secondary">Lebenslauf</a>
+                <a href="#contact" class="btn-primary">Kontakt aufnehmen</a>
+                <a href="#experience" class="btn-text">Lebenslauf ansehen &darr;</a>
             </div>
         </div>
+        
         <div class="hero-visual hidden">
-            <div class="tech-circle">
-                <i class="fas fa-camera-retro"></i>
-                <div class="orbit-item item-1"><i class="fab fa-python"></i></div>
-                <div class="orbit-item item-2"><i class="fab fa-js"></i></div>
-                <div class="orbit-item item-3"><i class="fas fa-magic"></i></div>
+            <div class="image-stack">
+                <div class="stack-card card-1"><i class="fas fa-camera"></i></div>
+                <div class="stack-card card-2"><i class="fas fa-code"></i></div>
+                <div class="stack-card card-3"><i class="fas fa-layer-group"></i></div>
             </div>
         </div>
     </section>
 
     <section id="about" class="section">
         <div class="container hidden">
-            <h2 class="section-title">Persönliches Profil</h2>
+            <h2 class="section-title">Über mich</h2>
             <div class="about-grid">
-                <div class="personal-card glass-panel">
-                    <h3><i class="far fa-id-card"></i> Daten</h3>
-                    <ul class="contact-list">
-                        <li>
-                            <i class="fas fa-calendar-alt"></i>
-                            <div>
-                                <span>Geburtsdatum</span>
-                                <p>15.12.1992</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-flag"></i>
-                            <div>
-                                <span>Staatsangehörigkeit</span>
-                                <p>Deutsch</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <span>Adresse</span>
-                                <p>Ahornweg 1, 14547 Beelitz-Heilstätten</p>
-                            </div>
-                        </li>
+                <div class="info-card">
+                    <h3><i class="far fa-user"></i> Persönliche Daten</h3>
+                    <ul class="details-list">
+                        <li><strong>Geburtsdatum:</strong> 15.12.1992</li>
+                        <li><strong>Staatsangehörigkeit:</strong> deutsch</li>
+                        <li><strong>Adresse:</strong> Ahornweg 1, 14547 Beelitz-Heilstätten</li>
                     </ul>
                 </div>
-                
-                <div class="contact-card glass-panel">
-                    <h3><i class="fas fa-address-book"></i> Kontakt</h3>
-                    <ul class="contact-list">
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <span>E-Mail</span>
-                                <p><a href="mailto:robert.schmidt1512@googlemail.com">robert.schmidt1512@googlemail.com</a></p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone-alt"></i>
-                            <div>
-                                <span>Telefon</span>
-                                <p><a href="tel:015731428728">0157 314 28 728</a></p>
-                            </div>
-                        </li>
+                <div class="info-card">
+                    <h3><i class="far fa-envelope"></i> Kontakt</h3>
+                    <ul class="details-list">
+                        <li><a href="mailto:robert.schmidt1512@googlemail.com">robert.schmidt1512@googlemail.com</a></li>
+                        <li><a href="tel:015731428728">0157 314 28 728</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="section bg-dark">
+    <section id="experience" class="section bg-alt">
         <div class="container hidden">
             <h2 class="section-title">Berufserfahrung</h2>
             <div class="timeline">
-                
                 <div class="timeline-item">
-                    <div class="timeline-date">Jun 2015 - Aktuell</div>
-                    <div class="timeline-content glass-panel">
-                        <h3>Bildbearbeiter & Prozessoptimierer</h3>
-                        <h4>Zalando Lounge Content Solutions, Berlin</h4>
-                        <p class="role-desc">Verbindung von kreativer High-End Retusche mit technischer Automatisierung.</p>
-                        <ul class="job-tasks">
-                            <li><i class="fas fa-check"></i> Spezialisiert auf Retusche, Farbkorrektur und Bildkomposition (Model & Produkt).</li>
-                            <li><i class="fas fa-check"></i> Erstellen von <strong>Photoshop Aktionen und Skripten</strong> zur Prozessoptimierung.</li>
-                            <li><i class="fas fa-check"></i> Ansprechpartner für technische Fragen und Support für die gesamte Post Production.</li>
-                            <li><i class="fas fa-check"></i> Erstellung von Trainings und Tutorials für die Abteilung.</li>
-                            <li><i class="fas fa-check"></i> Videoschnitt von Produktvideos.</li>
-                            <li><i class="fas fa-check"></i> Kampagnenmanagement (Hersteller & Muster).</li>
-                            <li><i class="fas fa-check"></i> Einhaltung strenger Deadlines und Qualitätsstandards.</li>
+                    <span class="date">Jun 2015 - Aktuell</span>
+                    <div class="timeline-content">
+                        <h3>Bildbearbeiter</h3>
+                        <h4>Zalando Lounge Content Solutions Berlin</h4>
+                        
+                        <ul class="job-list" style="margin-top: 15px; padding-left: 20px; list-style: disc; color: var(--text-muted);">
+                            <li>Erfahrener Bildbearbeiter mit fundierten Kenntnissen in Adobe Photoshop und Lightroom zur Optimierung visueller Inhalte.</li>
+                            <li>Spezialisiert auf Retusche, Farbkorrektur und Bildkomposition zur Steigerung der Bildqualität.</li>
+                            <li>Effiziente Umsetzung von Bildbearbeitungsprojekten unter Einhaltung strenger Deadlines und hoher Qualitätsstandards.</li>
+                            <li>Versiert im Umgang mit verschiedenen Dateiformaten und Bildauflösungen zur Anpassung an diverse Medienkanäle.</li>
+                            <li>Bildbearbeitung von Model und Produktbildern für die Zalando Lounge Webseite.</li>
+                            <li>Kampagnenmanagement von Hersteller und Muster-Kampagnen.</li>
+                            <li>Erstellen von Photoshop Aktionen und Skripten für Prozessoptimierungen.</li>
+                            <li>Erstellen und durchführen von Trainings für die ganze Abteilung (Post Production).</li>
+                            <li>Ansprechpartner für technische Fragen/Probleme für die ganze Abteilung (Post Production).</li>
+                            <li>Erstellen von Tutorials für die Post Production.</li>
+                            <li>Technik-Support für die Post Production.</li>
+                            <li>Videoschnitt von Produktvideos.</li>
+                            <li>Freigeben von Rollen um mit gewissen Tools arbeiten zu können.</li>
                         </ul>
+
                         <div class="tags">
-                            <span>Adobe Photoshop</span>
-                            <span>Scripting</span>
-                            <span>Training</span>
-                            <span>Support</span>
+                            <span>Photoshop & Lightroom</span>
+                            <span>Skripte & Aktionen</span>
+                            <span>Training & Support</span>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -139,116 +116,107 @@
             <h2 class="section-title">Kompetenzen</h2>
             
             <div class="skills-wrapper">
-                <div class="skill-category">
-                    <h3><i class="fas fa-laptop-code"></i> Software & Tools</h3>
-                    <div class="skill-bars">
-                        <div class="skill-bar">
-                            <div class="info">
-                                <p>Adobe Creative Suite (10+ Jahre)</p>
-                                <span>Expert</span>
-                            </div>
-                            <div class="bar"><span style="width: 98%"></span></div>
+                <div class="skill-group">
+                    <h3>Software & Tools</h3>
+                    <div class="skill-bar-container">
+                        <div class="skill-label">
+                            <span>Adobe Creative Suite: 10 Jahre+</span>
                         </div>
-                        <div class="skill-bar">
-                            <div class="info">
-                                <p>Capture One</p>
-                                <span>Advanced</span>
-                            </div>
-                            <div class="bar"><span style="width: 90%"></span></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="info">
-                                <p>Videoschnitt</p>
-                                <span>Advanced</span>
-                            </div>
-                            <div class="bar"><span style="width: 85%"></span></div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="info">
-                                <p>MS Office & Canva</p>
-                                <span>Advanced</span>
-                            </div>
-                            <div class="bar"><span style="width: 90%"></span></div>
-                        </div>
+                        <div class="progress-bar"><div class="fill" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-label"><span>Capture One</span></div>
+                        <div class="progress-bar"><div class="fill" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-label"><span>Videoschnitt</span></div>
+                        <div class="progress-bar"><div class="fill" style="width: 80%"></div></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-label"><span>Microsoft Office & Canva</span></div>
+                        <div class="progress-bar"><div class="fill" style="width: 90%"></div></div>
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <h3><i class="fas fa-terminal"></i> Tech & Dev</h3>
-                    <div class="tags-cloud">
-                        <span class="tag-tech"><i class="fab fa-python"></i> Python</span>
-                        <span class="tag-tech"><i class="fab fa-js"></i> JavaScript</span>
-                        <span class="tag-tech"><i class="fab fa-html5"></i> HTML & CSS</span>
-                        <span class="tag-tech"><i class="fas fa-code"></i> VS Code</span>
-                        <span class="tag-tech"><i class="fas fa-robot"></i> Skripterstellung</span>
-                        <span class="tag-tech"><i class="fas fa-bolt"></i> Vibe Coding</span>
-                        <span class="tag-tech"><i class="fab fa-windows"></i> Windows</span>
-                        <span class="tag-tech"><i class="fab fa-apple"></i> MacOS</span>
+                <div class="skill-group">
+                    <h3>Programmierung & IT</h3>
+                    <div class="tech-tags">
+                        <span class="tag">HTML & CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Visual Studio Code</span>
+                        <span class="tag">Vibe Coding</span>
+                        <span class="tag">Scripte erstellen</span>
+                        <span class="tag">Windows</span>
+                        <span class="tag">MacOS</span>
                     </div>
                 </div>
             </div>
 
-            <div class="languages glass-panel hidden" style="margin-top: 30px;">
-                <h3><i class="fas fa-language"></i> Sprachen</h3>
-                <div class="lang-grid">
-                    <div class="lang-item">
-                        <span class="lang-name">Deutsch</span>
-                        <span class="lang-level">Muttersprache</span>
-                        <div class="dots"><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></div>
-                    </div>
-                    <div class="lang-item">
-                        <span class="lang-name">Englisch</span>
-                        <span class="lang-level">Fortgeschritten</span>
-                        <div class="dots"><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="far fa-circle"></i></div>
-                    </div>
-                    <div class="lang-item">
-                        <span class="lang-name">Russisch</span>
-                        <span class="lang-level">Grundkenntnisse</span>
-                        <div class="dots"><i class="fas fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i></div>
-                    </div>
+            <div class="languages-row hidden">
+                <div class="lang-box">
+                    <span class="lang">Deutsch</span>
+                    <span class="level">Muttersprache</span>
+                </div>
+                <div class="lang-box">
+                    <span class="lang">Englisch</span>
+                    <span class="level">Fortgeschritten</span>
+                </div>
+                <div class="lang-box">
+                    <span class="lang">Russisch</span>
+                    <span class="level">Grundkenntnisse - Schulniveau</span>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <section id="education" class="section bg-dark">
+    <section id="education" class="section bg-alt">
         <div class="container hidden">
             <h2 class="section-title">Ausbildung</h2>
-            <div class="education-grid">
+            <div class="edu-grid">
                 
-                <div class="edu-card glass-panel">
-                    <span class="edu-date">Aug 2014 - Apr 2015</span>
+                <div class="edu-item">
+                    <span class="year">Aug 2014 - Apr 2015</span>
                     <h3>Mediengestalter Digital & Print</h3>
-                    <h4>PortUNA Neue Medien GmbH, Potsdam</h4>
-                    <p style="font-style: italic; font-size: 0.9rem; color: #8892b0;">(Abgebrochen, da Inhalte bereits bekannt)</p>
+                    <p>PortUNA Neue Medien GmbH Potsdam</p>
+                    <p style="font-size: 0.85rem; margin-top: 5px; font-style: italic;">Ausbildung abgebrochen, da es meiner vorherigen Ausbildung zu ähnlich war</p>
                 </div>
 
-                <div class="edu-card glass-panel">
-                    <span class="edu-date">Aug 2012 - Jul 2014</span>
-                    <h3>Gestaltungstechnischer Assistent</h3>
-                    <h4>Medienschule Babelsberg, Potsdam</h4>
-                    <p>Schwerpunkt: Digital & Print</p>
+                <div class="edu-item">
+                    <span class="year">Aug 2012 - Jul 2014</span>
+                    <h3>Gestaltungstechnischer Assistent Digital & Print</h3>
+                    <p>Medienschule Babelsberg Potsdam</p>
                 </div>
 
-                <div class="edu-card glass-panel">
-                    <span class="edu-date">Aug 2003 - Jul 2012</span>
+                <div class="edu-item">
+                    <span class="year">Aug 2003 - Jul 2012</span>
                     <h3>Abitur</h3>
-                    <h4>Gesamtschule “Grete Unrein”, Jena</h4>
+                    <p>Gesamtschule “Grete Unrein” Jena</p>
+                </div>
+
+                <div class="edu-item">
+                    <span class="year">Sep 1999 - Jun 2003</span>
+                    <h3>Grundschule</h3>
+                    <p>Grundschule “Friedrich Schule” Jena</p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="footer-content">
-            <h2>Robert Schmidt</h2>
-            <p>Bildbearbeitung · Automatisierung · Web</p>
-            <div class="footer-contact">
-                <a href="mailto:robert.schmidt1512@googlemail.com" class="btn-primary"><i class="fas fa-paper-plane"></i> Email senden</a>
+    <footer id="contact" class="footer-section">
+        <div class="footer-container">
+            <h2>Kontakt</h2>
+            <div class="footer-contact-info">
+                <a href="mailto:robert.schmidt1512@googlemail.com" class="footer-link">
+                    <i class="fas fa-envelope"></i> robert.schmidt1512@googlemail.com
+                </a>
+                <a href="tel:015731428728" class="footer-link">
+                    <i class="fas fa-phone-alt"></i> 0157 314 28 728
+                </a>
             </div>
-            <p class="copyright">&copy; 2024 Robert Schmidt. Erstellt mit HTML, CSS & JS.</p>
+            <div class="footer-divider"></div>
+            <p class="copyright">&copy; 2024 Robert Schmidt.</p>
         </div>
     </footer>
 

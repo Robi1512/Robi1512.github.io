@@ -3,48 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mein Portfolio</title>
+    <title>Max Mustermann | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="background-shapes"></div>
+    <nav class="navbar">
+        <div class="logo">Max.</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Über mich</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projekte</a></li>
+            <li><a href="#contact" class="btn-primary">Kontakt</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
 
-    <header>
-        <nav>
-            <div class="logo">Portfolio.</div>
-            <ul>
-                <li><a href="#about">Über mich</a></li>
-                <li><a href="#experience">Erfahrung</a></li>
-                <li><a href="#projects">Projekte</a></li>
-            </ul>
-        </nav>
-    </header>
+    <section id="home" class="hero">
+        <div class="hero-content hidden">
+            <h1>Hi, ich bin <span class="highlight">Max Mustermann</span></h1>
+            <h2 class="typing-text">Ich bin <span class="txt-type" data-wait="3000" data-words='["Developer", "Designer", "Creator"]'></span></h2>
+            <p>Ich baue digitale Erlebnisse mit Fokus auf Performance und Design.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn-primary">Meine Arbeit</a>
+                <a href="#contact" class="btn-secondary">Kontakt</a>
+            </div>
+        </div>
+        <div class="hero-visual hidden">
+            <div class="profile-glow">
+                <i class="fas fa-code"></i>
+            </div>
+        </div>
+    </section>
 
-    <main>
-        <section id="hero" class="glass-panel">
-            <div class="loader">Lade Daten...</div>
-        </section>
+    <section id="about" class="section">
+        <div class="container hidden">
+            <h2 class="section-title">Über mich</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Seit über 5 Jahren beschäftige ich mich intensiv mit Webtechnologien. Was als Hobby begann, ist heute meine Leidenschaft.</p>
+                    <p>Ich liebe es, komplexe Probleme in einfache, schöne und intuitive Designs zu verwandeln. Wenn ich nicht code, findet man mich beim Wandern oder Fotografieren.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>5+</h3>
+                            <p>Jahre Erfahrung</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>20+</h3>
+                            <p>Projekte</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="date">2021 - Heute</span>
+                        <h4>Senior Dev @ TechCorp</h4>
+                        <p>Leitung Frontend Architektur.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">2019 - 2021</span>
+                        <h4>Junior Dev @ WebStudio</h4>
+                        <p>Webseiten für KMUs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="skills" class="glass-panel">
-            <h2><i class="fas fa-code"></i> Tech Stack</h2>
-            <div id="skills-container" class="tags-container"></div>
-        </section>
+    <section id="skills" class="section bg-dark">
+        <div class="container hidden">
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <h3>Frontend</h3>
+                    <p>HTML, CSS, React, Vue</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-server"></i>
+                    <h3>Backend</h3>
+                    <p>Node.js, Python, SQL</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Design</h3>
+                    <p>Figma, Adobe XD</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Tools</h3>
+                    <p>Git, Docker, Webpack</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="experience" class="glass-panel">
-            <h2><i class="fas fa-briefcase"></i> Werdegang</h2>
-            <div id="timeline-container"></div>
-        </section>
+    <section id="projects" class="section">
+        <div class="container hidden">
+            <h2 class="section-title">Projekte</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>E-Commerce Dashboard</h3>
+                        <p>Ein Dashboard zur Verwaltung von Online-Shops mit Echtzeit-Statistiken.</p>
+                        <div class="tags">
+                            <span>React</span>
+                            <span>Firebase</span>
+                        </div>
+                        <a href="#" class="link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Portfolio V1</h3>
+                        <p>Mein erstes Portfolio, komplett ohne Frameworks erstellt.</p>
+                        <div class="tags">
+                            <span>HTML</span>
+                            <span>SCSS</span>
+                        </div>
+                        <a href="#" class="link"><i class="fab fa-github"></i> Code ansehen</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Task Manager App</h3>
+                        <p>Eine Produktivitäts-App mit Drag-and-Drop Funktion.</p>
+                        <div class="tags">
+                            <span>Vue.js</span>
+                            <span>Node</span>
+                        </div>
+                        <a href="#" class="link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="projects" class="glass-panel">
-            <h2><i class="fas fa-rocket"></i> Projekte</h2>
-            <div id="projects-grid" class="grid-container"></div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; <span id="year"></span> Erstellt mit Code & Kaffee.</p>
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>Lass uns zusammenarbeiten!</h2>
+            <p>Hast du eine Idee oder ein Projekt? Schreib mir.</p>
+            <a href="mailto:email@beispiel.de" class="btn-primary">Email senden</a>
+            
+            <div class="socials">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="copyright">&copy; 2024 Max Mustermann. Built with code.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>

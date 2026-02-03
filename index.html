@@ -201,36 +201,38 @@
         <div class="container hidden">
             <h2 class="section-title">Nachricht senden</h2>
             <p style="text-align: center; max-width: 600px; margin: 0 auto 30px auto;">
-                Haben Sie Fragen oder Interesse an einer Zusammenarbeit? Nutzen Sie gerne das Formular für eine direkte Nachricht.
+                Haben Sie Fragen? Schreiben Sie mir direkt.
             </p>
             <div class="form-wrapper">
-                <form id="contact-form" name="kontaktformular" method="POST" data-netlify="true" class="contact-form">
-                    
-                    <input type="hidden" name="form-name" value="kontaktformular">
+                
+                <form name="contact" method="POST" netlify class="contact-form">
                     
                     <div class="input-group">
+                        <label for="name" style="display:block; margin-bottom:5px; color:var(--text-muted); font-size:0.9rem;">Name</label>
                         <input type="text" name="name" id="name" required placeholder="Ihr Name">
                     </div>
+
                     <div class="input-group">
+                        <label for="email" style="display:block; margin-bottom:5px; color:var(--text-muted); font-size:0.9rem;">Email</label>
                         <input type="email" name="email" id="email" required placeholder="Ihre E-Mail">
                     </div>
+
                     <div class="input-group">
+                        <label for="message" style="display:block; margin-bottom:5px; color:var(--text-muted); font-size:0.9rem;">Nachricht</label>
                         <textarea name="message" id="message" required placeholder="Ihre Nachricht..."></textarea>
                     </div>
+
+                    <button type="submit" class="btn-primary" style="width: 100%;">Senden</button>
                     
-                    <button type="submit" id="submit-btn" class="btn-primary" style="width: 100%;">
-                        Senden <i class="fas fa-paper-plane"></i>
-                    </button>
-                    
-                    <p id="form-status" style="text-align: center; margin-top: 15px; font-weight: 600; display: none;"></p>
                 </form>
+
             </div>
         </div>
     </section>
 
     <footer class="footer-section">
         <div class="footer-container">
-            <p class="copyright">&copy; 2026 Robert Schmidt.</p>
+            <p class="copyright">&copy; 2026 Robert Schmidt</p>
         </div>
     </footer>
 

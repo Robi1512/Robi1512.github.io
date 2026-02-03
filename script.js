@@ -97,4 +97,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach((el) => observer.observe(el));
+
+    // --- 5. CONTACT FORM HANDLING (AJAX) ---
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Verhindert das Neuladen der Seite
+
+            // Button Feedback "Laden"
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Sende... <i class="fas fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
+
+            // Daten sammeln
+            const formData = new FormData(contactForm);
+
+            // An Netlify senden
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                // ERFOLG
+                formStatus.style.display = 'block';
+                formStatus.style.color = 'var(--primary)';
+                formStatus.textContent = 'Vielen Dank! Ihre Nachricht wurde gesendet.';
+                
+                // Button Reset
+                submitBtn.innerHTML = 'Gesendet <i class="fas fa-check"></i>';
+                submitBtn.style.backgroundColor = 'var(--primary)';
+                
+                // Formular leeren
+                contactForm.reset();
+
+                // Nach 3 Sekunden Status ausblenden und Button zurücksetzen
+                setTimeout(() => {
+                    formStatus.style.display = 'none';
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                }, 5000);
+            })
+            .catch((error) => {
+                // FEHLER
+                console.error('Formular Fehler:', error);
+                formStatus.style.display = 'block';
+                formStatus.style.color = 'red';
+                formStatus.textContent = 'Fehler beim Senden. Bitte versuchen Sie es später erneut.';
+                
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            });
+        });
+    }
+
 });

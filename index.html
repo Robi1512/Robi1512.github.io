@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Interaktive Welt</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">🚀 FunSpace</div>
+        <button id="theme-toggle">🌙 Modus wechseln</button>
+    </nav>
+
+    <header class="hero">
+        <h1>Willkommen auf der Spielwiese</h1>
+        <p>Hier gibt es Funktionen, die einfach Spaß machen.</p>
+        <button id="confetti-btn" class="action-btn">🎉 Konfetti explodieren lassen!</button>
+    </header>
+
+    <main>
+        <div class="grid-container">
+            <div class="card">
+                <h2>😂 Der Witz-O-Mat</h2>
+                <p id="joke-text">Drücke den Knopf für einen Witz...</p>
+                <button onclick="getJoke()">Neuer Witz</button>
+            </div>
+
+            <div class="card">
+                <h2>⚡ Klick-Challenge</h2>
+                <p>Du hast <span id="click-count">0</span> mal geklickt.</p>
+                <button id="clicker-btn">Klick mich hart!</button>
+                <p class="small">Klicke so schnell du kannst!</p>
+            </div>
+            
+            <div class="card">
+                <h2>🐙 GitHub Status</h2>
+                <p>Diese Seite läuft 100% auf GitHub Pages.</p>
+                <a href="https://github.com/" target="_blank" class="link-btn">Zum Repo</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Erstellt mit viel Spaß und Code.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

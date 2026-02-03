@@ -3,48 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Interaktive Welt</title>
+    <title>Mein Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <nav>
-        <div class="logo">🚀 FunSpace</div>
-        <button id="theme-toggle">🌙 Modus wechseln</button>
-    </nav>
+    <div class="background-shapes"></div>
 
-    <header class="hero">
-        <h1>Willkommen auf der Spielwiese</h1>
-        <p>Hier gibt es Funktionen, die einfach Spaß machen.</p>
-        <button id="confetti-btn" class="action-btn">🎉 Konfetti explodieren lassen!</button>
+    <header>
+        <nav>
+            <div class="logo">Portfolio.</div>
+            <ul>
+                <li><a href="#about">Über mich</a></li>
+                <li><a href="#experience">Erfahrung</a></li>
+                <li><a href="#projects">Projekte</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <div class="grid-container">
-            <div class="card">
-                <h2>😂 Der Witz-O-Mat</h2>
-                <p id="joke-text">Drücke den Knopf für einen Witz...</p>
-                <button onclick="getJoke()">Neuer Witz</button>
-            </div>
+        <section id="hero" class="glass-panel">
+            <div class="loader">Lade Daten...</div>
+        </section>
 
-            <div class="card">
-                <h2>⚡ Klick-Challenge</h2>
-                <p>Du hast <span id="click-count">0</span> mal geklickt.</p>
-                <button id="clicker-btn">Klick mich hart!</button>
-                <p class="small">Klicke so schnell du kannst!</p>
-            </div>
-            
-            <div class="card">
-                <h2>🐙 GitHub Status</h2>
-                <p>Diese Seite läuft 100% auf GitHub Pages.</p>
-                <a href="https://github.com/" target="_blank" class="link-btn">Zum Repo</a>
-            </div>
-        </div>
+        <section id="skills" class="glass-panel">
+            <h2><i class="fas fa-code"></i> Tech Stack</h2>
+            <div id="skills-container" class="tags-container"></div>
+        </section>
+
+        <section id="experience" class="glass-panel">
+            <h2><i class="fas fa-briefcase"></i> Werdegang</h2>
+            <div id="timeline-container"></div>
+        </section>
+
+        <section id="projects" class="glass-panel">
+            <h2><i class="fas fa-rocket"></i> Projekte</h2>
+            <div id="projects-grid" class="grid-container"></div>
+        </section>
     </main>
 
     <footer>
-        <p>Erstellt mit viel Spaß und Code.</p>
+        <p>&copy; <span id="year"></span> Erstellt mit Code & Kaffee.</p>
     </footer>
 
     <script src="script.js"></script>

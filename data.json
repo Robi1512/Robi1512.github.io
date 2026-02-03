@@ -1,0 +1,36 @@
+{
+  "profile": {
+    "name": "Max Mustermann",
+    "title": "Full Stack Developer & Creative Mind",
+    "bio": "Ich entwickle komplexe Weblösungen mit Leidenschaft für sauberen Code und großartiges Design.",
+    "email": "kontakt@beispiel.de",
+    "github": "github.com/maxmustermann"
+  },
+  "skills": ["JavaScript", "React", "Node.js", "Python", "UI/UX Design", "Docker"],
+  "experience": [
+    {
+      "role": "Senior Web Developer",
+      "company": "TechCorp GmbH",
+      "period": "2021 - Heute",
+      "description": "Leitung des Frontend-Teams und Entwicklung von skalierbaren Web-Apps."
+    },
+    {
+      "role": "Junior Software Engineer",
+      "company": "Startup Studio",
+      "period": "2019 - 2021",
+      "description": "Entwicklung von APIs und Datenbank-Optimierung."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Portfolio V1",
+      "tech": "HTML/CSS/JS",
+      "link": "#"
+    },
+    {
+      "title": "E-Commerce Dashboard",
+      "tech": "React & Firebase",
+      "link": "#"
+    }
+  ]
+}

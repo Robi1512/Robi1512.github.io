@@ -15,7 +15,7 @@
     </a>
 
     <nav class="navbar">
-        <div class="logo">Robert Schmidt.</div>
+        <div class="logo">Robert Schmidt</div>
         <div class="nav-right">
             <ul class="nav-links">
                 <li><a href="#home">Start</a></li>
@@ -59,20 +59,13 @@
     <section id="about" class="section">
         <div class="container hidden">
             <h2 class="section-title">Über mich</h2>
-            <div class="about-grid">
+            <div class="about-grid single-card">
                 <div class="info-card">
                     <h3><i class="far fa-user"></i> Persönliche Daten</h3>
                     <ul class="details-list">
                         <li><strong>Geburtsdatum:</strong> 15.12.1992</li>
                         <li><strong>Staatsangehörigkeit:</strong> deutsch</li>
                         <li><strong>Adresse:</strong> Ahornweg 1, 14547 Beelitz-Heilstätten</li>
-                    </ul>
-                </div>
-                <div class="info-card">
-                    <h3><i class="far fa-envelope"></i> Direktkontakt</h3>
-                    <ul class="details-list">
-                        <li><a href="mailto:robert.schmidt1512@googlemail.com">robert.schmidt1512@googlemail.com</a></li>
-                        <li><a href="tel:015731428728">0157 314 28 728</a></li>
                     </ul>
                 </div>
             </div>
@@ -207,18 +200,29 @@
     <section id="contact-area" class="section">
         <div class="container hidden">
             <h2 class="section-title">Nachricht senden</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 30px auto;">
+                Haben Sie Fragen oder Interesse an einer Zusammenarbeit? Nutzen Sie gerne das Formular für eine direkte Nachricht.
+            </p>
             <div class="form-wrapper">
-                <form name="kontaktformular" method="POST" data-netlify="true" class="contact-form">
+                <form id="contact-form" name="kontaktformular" method="POST" data-netlify="true" class="contact-form">
+                    
+                    <input type="hidden" name="form-name" value="kontaktformular">
+                    
                     <div class="input-group">
-                        <input type="text" name="name" required placeholder="Ihr Name">
+                        <input type="text" name="name" id="name" required placeholder="Ihr Name">
                     </div>
                     <div class="input-group">
-                        <input type="email" name="email" required placeholder="Ihre E-Mail">
+                        <input type="email" name="email" id="email" required placeholder="Ihre E-Mail">
                     </div>
                     <div class="input-group">
-                        <textarea name="message" required placeholder="Ihre Nachricht..."></textarea>
+                        <textarea name="message" id="message" required placeholder="Ihre Nachricht..."></textarea>
                     </div>
-                    <button type="submit" class="btn-primary" style="width: 100%;">Senden <i class="fas fa-paper-plane"></i></button>
+                    
+                    <button type="submit" id="submit-btn" class="btn-primary" style="width: 100%;">
+                        Senden <i class="fas fa-paper-plane"></i>
+                    </button>
+                    
+                    <p id="form-status" style="text-align: center; margin-top: 15px; font-weight: 600; display: none;"></p>
                 </form>
             </div>
         </div>
@@ -226,17 +230,7 @@
 
     <footer class="footer-section">
         <div class="footer-container">
-            <h2>Robert Schmidt</h2>
-            <div class="footer-contact-info">
-                <a href="mailto:robert.schmidt1512@googlemail.com" class="footer-link">
-                    <i class="fas fa-envelope"></i> robert.schmidt1512@googlemail.com
-                </a>
-                <a href="tel:015731428728" class="footer-link">
-                    <i class="fas fa-phone-alt"></i> 0157 314 28 728
-                </a>
-            </div>
-            <div class="footer-divider"></div>
-            <p class="copyright">&copy; 2024 Robert Schmidt.</p>
+            <p class="copyright">&copy; 2026 Robert Schmidt.</p>
         </div>
     </footer>
 

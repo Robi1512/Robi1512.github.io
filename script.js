@@ -5,10 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const htmlElement = document.documentElement;
     const icon = toggleBtn.querySelector('i');
 
-    // Prüfen, ob bereits eine Einstellung gespeichert ist
     const savedTheme = localStorage.getItem('theme');
     
-    // Wenn 'dark' gespeichert ist, anwenden
     if (savedTheme === 'dark') {
         htmlElement.setAttribute('data-theme', 'dark');
         icon.classList.remove('fa-moon');
@@ -19,13 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentTheme = htmlElement.getAttribute('data-theme');
         
         if (currentTheme === 'dark') {
-            // Wechsel zu Light
             htmlElement.setAttribute('data-theme', 'light');
             localStorage.setItem('theme', 'light');
             icon.classList.remove('fa-sun');
             icon.classList.add('fa-moon');
         } else {
-            // Wechsel zu Dark
             htmlElement.setAttribute('data-theme', 'dark');
             localStorage.setItem('theme', 'dark');
             icon.classList.remove('fa-moon');
@@ -33,8 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- 2. SCROLL TO TOP BUTTON ---
+    const toTopBtn = document.querySelector('.to-top');
 
-    // --- 2. TYPING EFFECT ---
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            toTopBtn.classList.add('active');
+        } else {
+            toTopBtn.classList.remove('active');
+        }
+    });
+
+    // --- 3. TYPING EFFECT ---
     const txtElement = document.querySelector('.txt-type');
     const words = JSON.parse(txtElement.getAttribute('data-words'));
     const wait = txtElement.getAttribute('data-wait');
@@ -80,8 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     new TypeWriter(txtElement, words, wait);
 
-
-    // --- 3. SCROLL ANIMATION ---
+    // --- 4. SCROLL ANIMATION ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
